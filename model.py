@@ -43,3 +43,16 @@ plt.xlabel("Actual Values (Train)")
 plt.ylabel("Predicted Values (Train)")
 plt.title("MLP Regressor: Train Predictions vs Actual")
 plt.show()
+
+mlp.fit(X_test, y_test)
+
+y_test_pred = mlp.predict(X_test)
+plt.figure(figsize=(6, 6))
+plt.scatter(y_test, y_test_pred, alpha=0.3)
+plt.plot([y_test.min(), y_test.max()],
+[y_test.min(), y_test.max()],
+linestyle="--")
+plt.xlabel("Actual Values (Test)")
+plt.ylabel("Predicted Values (Test)")
+plt.title("MLP Regressor: Test Predictions vs Actual")
+plt.show()
